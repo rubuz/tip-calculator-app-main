@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+
+    <title>Frontend Mentor | Tip calculator app</title>
+  </head>
+  <body>
+    <main>
+      <div class="left__container">
+        <div class="input__container">
+          <p class="mid__title">Bill</p>
+          <div class="input__bar">
+            <div class="icon__container">
+              <img
+                src="./public/images/icon-dollar.svg"
+                alt=""
+                aria-hidden="true"
+              />
+            </div>
+            <input class="input__field" type="number" />
+          </div>
+        </div>
+        <div class="select__container">
+          <p class="mid__title">Select Tip %</p>
+          <div class="select__grid">
+            <ul class="selector">
+              <li class="regular__btn">5%</li>
+              <li class="regular__btn">10%</li>
+              <li class="regular__btn">15%</li>
+              <li class="regular__btn">25%</li>
+              <li class="regular__btn">50%</li>
+              <li class="custom__btn">Custom</li>
+            </ul>
+          </div>
+        </div>
+        <div class="input__container">
+          <p class="mid__title">Number of people</p>
+          <div class="input__bar">
+            <div class="icon__container">
+              <img
+                src="./public/images/icon-person.svg"
+                alt=""
+                aria-hidden="true"
+              />
+            </div>
+            <input class="input__field" type="number" />
+          </div>
+        </div>
+      </div>
+      <div class="right__container">
+        <div class="result__container">
+          <div class="calc__container">
+            <div class="text__result">
+              <p class="result__title">Tip Amount</p>
+              <p class="text__person">/ person</p>
+            </div>
+            <p class="final__calc"><span>$</span>0.00</p>
+          </div>
+          <div class="calc__container">
+            <div class="text__result">
+              <p class="result__title">Total</p>
+              <p class="text__person">/ person</p>
+            </div>
+            <p class="final__calc"><span>$</span>0.00</p>
+          </div>
+        </div>
+        <button class="reset__btn">RESET</button>
+      </div>
+    </main>
+    <footer>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Your Name Here</a>.
+      </div>
+    </footer>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,227 @@
+:root {
+  --clr-primary-400: hsl(172, 67%, 45%);
+
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-200: hsl(189, 41%, 97%);
+  --clr-neutral-300: hsl(185, 41%, 84%);
+  --clr-neutral-400: hsl(184, 14%, 56%);
+  --clr-neutral-500: hsl(186, 14%, 43%);
+  --clr-neutral-600: hsl(183, 100%, 20%);
+  --clr-neutral-700: hsl(183, 100%, 15%);
+
+  --ff-regular: "Space Mono", monospace;
+
+  --fs-smaller: 0.7rem;
+  --fs-small: 0.8rem;
+  --fs-large: 1.2rem;
+  --fs-larger: 1.5rem;
+  --fs-xlarger: 2.3rem;
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+button {
+  border: none;
+}
+
+/* General styling */
+
+body {
+  font-family: var(--ff-regular);
+  background-color: var(--clr-neutral-300);
+
+  display: grid;
+  place-content: center;
+}
+
+main {
+  background-color: var(--clr-neutral-100);
+  color: var(--clr-neutral-500);
+  padding: 2rem;
+  width: 800px;
+  border-radius: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+/* Remove arrow from input filed */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Styling */
+
+/* Left/up container  */
+.left__container {
+  display: grid;
+  gap: 1.7rem;
+}
+
+.input__container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.icon__container {
+  position: absolute;
+  margin-left: 1rem;
+  width: 10px;
+}
+
+.input__bar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.input__field {
+  width: 100%;
+  text-align: right;
+  padding: 0.2rem 1rem;
+  background-color: var(--clr-neutral-200);
+  border: none;
+  border-radius: 0.3rem;
+}
+
+.selector {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 0.7rem;
+}
+
+.selector li {
+  text-align: center;
+  font-size: var(--fs-large);
+  border-radius: 0.3rem;
+  padding: 0.2rem 0;
+}
+
+.regular__btn {
+  background-color: var(--clr-neutral-700);
+  color: var(--clr-neutral-100);
+}
+
+.custom__btn {
+  background-color: var(--clr-neutral-200);
+  color: var(--clr-neutral-500);
+}
+
+/* Right/down conatiner */
+
+.right__container {
+  background-color: var(--clr-neutral-700);
+  border-radius: 0.8rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.result__container {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.calc__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text__result {
+  font-size: var(--fs-small);
+}
+
+.result__title {
+  color: var(--clr-neutral-100);
+}
+
+.text__person {
+  font-size: var(--fs-smaller);
+}
+
+.final__calc {
+  font-size: var(--fs-xlarger);
+  color: var(--clr-primary-400);
+}
+
+.reset__btn {
+  background-color: var(--clr-neutral-600);
+  color: var(--clr-neutral-700);
+  padding: 0.4rem 0;
+  border-radius: 0.3rem;
+}
