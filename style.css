@@ -1,4 +1,5 @@
 :root {
+  --clr-primary-200: hsl(172, 67%, 70%);
   --clr-primary-400: hsl(172, 67%, 45%);
 
   --clr-neutral-100: hsl(0, 0%, 100%);
@@ -8,6 +9,8 @@
   --clr-neutral-500: hsl(186, 14%, 43%);
   --clr-neutral-600: hsl(183, 100%, 20%);
   --clr-neutral-700: hsl(183, 100%, 15%);
+
+  --clr-error: rgb(255, 104, 104);
 
   --ff-regular: "Space Mono", monospace;
 
@@ -31,6 +34,11 @@
 */
 * {
   margin: 0;
+
+  /* Remove text secelction */
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 /*
   3. Allow percentage-based heights in the application
@@ -83,6 +91,7 @@ h6 {
 
 button {
   border: none;
+  cursor: pointer;
 }
 
 /* General styling */
@@ -98,31 +107,38 @@ body {
 main {
   background-color: var(--clr-neutral-100);
   color: var(--clr-neutral-500);
-  padding: 2rem;
-  width: 800px;
+  margin: 1rem;
+  padding: 1.5rem;
+  /* width: 770px; */
+  min-width: 500px;
+  max-width: 770px;
   border-radius: 1rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 3rem;
 }
 
-/* Remove arrow from input filed */
-/* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* Firefox */
-input[type="number"] {
-  -moz-appearance: textfield;
+.logo__img {
+  margin: 3rem auto;
+  margin-top: -5rem;
 }
 
 .container {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
+}
+
+input {
+  color: var(--clr-neutral-700);
+}
+
+footer {
+  margin-top: 1rem;
+}
+
+::placeholder {
+  color: var(--clr-neutral-300);
 }
 
 /* Styling */
@@ -158,8 +174,7 @@ input[type="number"] {
   border-radius: 0.3rem;
 }
 
-.selector {
-  list-style: none;
+.select__grid {
   padding: 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -167,7 +182,8 @@ input[type="number"] {
   gap: 0.7rem;
 }
 
-.selector li {
+.selector {
+  cursor: pointer;
   text-align: center;
   font-size: var(--fs-large);
   border-radius: 0.3rem;
@@ -180,8 +196,48 @@ input[type="number"] {
 }
 
 .custom__btn {
+  padding: 0;
   background-color: var(--clr-neutral-200);
   color: var(--clr-neutral-500);
+}
+
+.custom__input {
+  width: 100%;
+  height: 100%;
+  background-color: var(--clr-neutral-200);
+  color: var(--clr-neutral-500);
+  border-radius: 0.3rem;
+  text-align: center;
+  border: none;
+}
+
+.custom__input::placeholder {
+  color: var(--clr-neutral-400);
+}
+
+input:focus {
+  outline: 2px solid var(--clr-primary-400);
+}
+
+.number__people {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cant__zero {
+  color: var(--clr-error);
+  opacity: 1;
+  transition: 0.2s;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.error__line {
+  outline: 2px solid var(--clr-error) !important;
+  transition: 0.2s;
 }
 
 /* Right/down conatiner */
@@ -224,10 +280,53 @@ input[type="number"] {
 }
 
 .reset__btn {
+  cursor: default;
   background-color: var(--clr-neutral-600);
   color: var(--clr-neutral-700);
   padding: 0.4rem 0;
   border-radius: 0.3rem;
 }
 
+/* Active styles */
+
+.active {
+  background-color: var(--clr-primary-400);
+  color: var(--clr-neutral-700);
+}
+
+.reset__btn:enabled:hover {
+  cursor: pointer;
+}
+
+.regular__btn:active,
+.reset__btn:enabled:active {
+  cursor: pointer;
+  background-color: var(--clr-primary-200);
+  color: var(--clr-neutral-700);
+  transition: 0.1s;
+}
+
 /* Mobile desing */
+
+@media (max-width: 640px) {
+  main {
+    min-width: 300px;
+    max-width: 470px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+    margin: 0;
+  }
+  .select__grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .right__container {
+    gap: 2rem;
+  }
+
+  .final__calc {
+    font-size: var(--fs-larger);
+  }
+}

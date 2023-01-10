@@ -31,6 +31,11 @@
     <title>Frontend Mentor | Tip calculator app</title>
   </head>
   <body>
+    <img
+      class="logo__img"
+      src="/public/images/logo.svg"
+      alt="logo - split text SPLIT - TTER"
+    />
     <main>
       <div class="left__container">
         <div class="input__container container">
@@ -43,24 +48,32 @@
                 aria-hidden="true"
               />
             </div>
-            <input class="input__field" type="number" />
+            <input
+              class="input__field"
+              type="text"
+              placeholder="0"
+              id="bill-input"
+            />
           </div>
         </div>
         <div class="select__container container">
           <p class="mid__title">Select Tip %</p>
           <div class="select__grid">
-            <ul class="selector">
-              <li class="regular__btn">5%</li>
-              <li class="regular__btn">10%</li>
-              <li class="regular__btn">15%</li>
-              <li class="regular__btn">25%</li>
-              <li class="regular__btn">50%</li>
-              <li class="custom__btn">Custom</li>
-            </ul>
+            <div class="selector regular__btn" data-percent="5">5%</div>
+            <div class="selector regular__btn" data-percent="10">10%</div>
+            <div class="selector regular__btn" data-percent="15">15%</div>
+            <div class="selector regular__btn" data-percent="25">25%</div>
+            <div class="selector regular__btn" data-percent="50">50%</div>
+            <div class="selector custom__btn">
+              <input class="custom__input" type="text" placeholder="Custom" />
+            </div>
           </div>
         </div>
         <div class="input__container container">
-          <p class="mid__title">Number of people</p>
+          <div class="number__people">
+            <p class="mid__title">Number of people</p>
+            <p class="cant__zero hidden">Can't be zero</p>
+          </div>
           <div class="input__bar">
             <div class="icon__container">
               <img
@@ -69,7 +82,12 @@
                 aria-hidden="true"
               />
             </div>
-            <input class="input__field" type="number" />
+            <input
+              class="input__field"
+              type="text"
+              placeholder="0"
+              id="people-input"
+            />
           </div>
         </div>
       </div>
@@ -80,14 +98,14 @@
               <p class="result__title">Tip Amount</p>
               <p class="text__person">/ person</p>
             </div>
-            <p class="final__calc"><span>$</span>0.00</p>
+            <p class="final__calc" id="tip-amount">$0.00</p>
           </div>
           <div class="calc__container">
             <div class="text__result">
               <p class="result__title">Total</p>
               <p class="text__person">/ person</p>
             </div>
-            <p class="final__calc"><span>$</span>0.00</p>
+            <p class="final__calc" id="total-amount">$0.00</p>
           </div>
         </div>
         <button class="reset__btn">RESET</button>
