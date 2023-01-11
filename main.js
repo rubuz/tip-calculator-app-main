@@ -30,6 +30,7 @@ resetBtn.addEventListener("click", (event) => {
   resetBtn.classList.remove("active");
   resetBtn.disabled = true;
   error.classList.add("hidden");
+  peopleInput.classList.remove("error__line");
 
   // tipPercentage[2].classList.add("active");
 });
@@ -100,8 +101,8 @@ const calculateTip = () => {
     Math.round((splitBill + tipPerPerson + Number.EPSILON) * 100) / 100;
 
   // Put results into HTML element
-  // Check if result is NaN
-  if (isNaN(tipPerPerson) || isNaN(totalPerPerson)) {
+  // Check if result is NaN or people number equals to 0
+  if (isNaN(tipPerPerson) || isNaN(totalPerPerson) || peopleNumber === 0) {
     tipAmount.textContent = "$0.00";
     totalAmount.textContent = "$0.00";
   } else {
